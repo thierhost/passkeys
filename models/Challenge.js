@@ -8,14 +8,13 @@ const Challenge = sequelize.define('Challenge', {
   }
 });
 
-/*
 Challenge
-.sync({ alter: true })
-.then(data => {
-    console.log("sync");
-})
-.catch(error => {
-    console.log(error);
-})
-*/
+  .sync()
+  .then(data => {
+      console.log("Synced Challenge SQLite table");
+  })
+  .catch(error => {
+      console.log(error);
+  })
+
 module.exports = Challenge;

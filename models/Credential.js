@@ -22,14 +22,14 @@ const Credential = sequelize.define('Credential', {
 
 User.hasMany(Credential);
 Credential.belongsTo(User);
-/*
+
 Credential
-.sync({ alter: true })
-.then(data => {
-    console.log("sync");
-})
-.catch(error => {
-    console.log(error);
-})*/
+  .sync()
+  .then(data => {
+      console.log("Synced Credential SQLite table");
+  })
+  .catch(error => {
+      console.log(error);
+  })
 
 module.exports = Credential;

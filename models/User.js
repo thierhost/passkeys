@@ -23,13 +23,13 @@ const User = sequelize.define('User', {
   }
 });
 
-/*User
-.sync({ alter: true })
-.then(data => {
-    console.log("sync");
-})
-.catch(error => {
-    console.log(error);
-})*/
+User
+  .sync()
+  .then(data => {
+      console.log("Synced User SQLite table");
+  })
+  .catch(error => {
+      console.log(error);
+  })
 
 module.exports = User;
