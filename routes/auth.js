@@ -8,7 +8,7 @@ const challengeManager =  require('../models/ChallengeManager');
 const  isoBase64URL = require('@simplewebauthn/server/helpers'); 
 const SimpleWebAuthnServer = require('@simplewebauthn/server');
 const rpID = 'localhost';
-const origin = `http://${rpID}:3000`;
+const origin = `http://${rpID}:${process.env.PORT || 3000}`;
 
 
 
@@ -23,12 +23,12 @@ function encodePassword(_password) {
 router.post('/sign-in', async function(req, res, next) {
   let userName = req.body.userName.toLowerCase();
   let password = encodePassword(req.body.password);
-  const user = (await userManager.getUserBy({'userName':userName, 'password': password})).toJSON();
+  const user = (await userManager.getUserBy({'userName':userName, 'password': password}))?.toJSON();
   if(user) {
     delete user.password;
     res.json(user)
   }else {
-    res.json({"error":"username or password invalide"});
+    res.json({"error":"Invalid username or password"});
   }
 });
 
@@ -70,7 +70,7 @@ router.post('/sign-up', async function(req, res, next) {
 
 router.post("/request-options", async function(req, res, next) {
   // retrieve the user 
-  const user = (await userManager.getUserBy({"userName":req.body.userName})).toJSON();
+  const user = (await userManager.getUserBy({"userName":req.body.userName}))?.toJSON();
   if(user) {
     // retrieve the current user credentials
     let credentials = (await credentialManager.getAllCrentialsByUserId(user.id));
