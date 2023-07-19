@@ -4,21 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Account</title>
-    <style>
-        .hidden {
-            display: none;
-        }
-        .show {
-            display: inline;
-        }
-    </style>
+    <title>Passkeys demo | Account</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 <body>
+    <h1>Passkeys demo | Account</h1>
+    <p>Account details</p>
 
-    <h1>Account details</h1>
     <section id="accountDetails"></section>
-    <button  class="hidden" id="btnCreatePasskey">Create a passkey</button>
+    <button  class="hidden" id="btnCreatePasskey">
+      <img src='./passkey-icon.svg' width="16" height="16" />
+      Create a passkey
+    </button>
     <button  id="btnLogOut">Logout</button>
 
     <script src="https://unpkg.com/@simplewebauthn/browser/dist/bundle/index.umd.min.js"></script>

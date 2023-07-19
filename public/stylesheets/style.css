@@ -1,8 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+}
+
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  min-height: 100vh;
+  background-color: aliceblue;
+}
+
+h2 {
+  margin-block-start: 1.5em;
 }
 
 a {
   color: #00B7FF;
+}
+
+button {
+  cursor: pointer;
+  background-color: #00B7FF;
+}
+button:hover {
+  background-color: #86ddff;
+  box-shadow: 0 0 6px rgb(0 0 0 / 0.25);
+}
+button:active {
+  background-color: #0182b5;
+  box-shadow: none;
+}
+
+input, textarea {
+  background-color: #fff;
+  color: #00203c;
+}
+input, button, textarea {
+  padding: 0.5em 1em;
+  margin: 0.5em;
+  border-radius: 9999px;
+  border: 1px solid transparent;
+  transition: all 0.3s;
+  font-family: inherit;
+  font-weight: 700;
+}
+
+input:hover, textarea:hover {
+  background-color: rgb(0 183 255 / 0.1);
+}
+
+input:focus-within {
+  background-color: rgb(0 183 255 / 0.1);
+  border-color: #00B7FF;
+  outline: none;
+  box-shadow: 0 0 6px rgb(0 0 0 / 0.25);
+}
+
+.hidden {
+  display: none;
+}
+.show {
+  display: inline;
+}
+
+#signUpForm {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+#btnCreatePasskey > img,
+#signInBtnPasskey > img {
+  vertical-align: text-bottom;
+  margin-right: 4px;
 }

@@ -1,46 +1,50 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>Express</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/stylesheets/style.css">
-
-  <style>
-    .hidden{
-      display: none;
-    }
-  </style>
+  <title>Passkeys demo | Login/Signup</title>
 </head>
-
 <body>
-  <h1>Express</h1>
-  <p>Welcome to Express</p>
+  <h1>Passkeys demo | Login/Signup</h1>
+  <p>Passkeys example login and signup page</p>
+  
+  <h2>Sign up</h2>
   <section>
-    <span>SignUp</span>
     <form id="signUpForm">
-      <input type="text" name="firstName" id="firstName" placeholder="firstName">
-      <input type="text" name="lastName" id="lastName" placeholder="lastName">
-      <input type="email" name="email" id="email" placeholder="email">
-      <input type="text" name="userName" id="userName"  placeholder="userName">
-      <input type="password" name="password" id="password" autocomplete="new-password" placeholder="password">
-      <button id="signUpBtn">sign-up</button>
+      <div>
+        <input type="text" name="firstName" id="firstName" placeholder="first name">
+        <input type="text" name="lastName" id="lastName" placeholder="last name">
+      </div>
+      <div>
+        <input type="email" name="email" id="email" placeholder="email">
+        <input type="text" name="userName" id="userName"  placeholder="username">
+        <input type="password" name="password" id="password" autocomplete="new-password" placeholder="password">
+      </div>
+      <button id="signUpBtn">Sign up</button>
     </form>
   </section>
  
+  <h2>Sign in</h2>
   <section>
-    <span>signIn</span>
-    <form>
-      <input type="text" name="userName" id="signInUserName" placeholder="userName">
+    <h3>Password sign in</h3>
+      <form>
+      <input type="text" name="userName" id="signInUserName" placeholder="username">
       <input type="password" name="password" id="signInPassword">
-      <button id="signInBtn">sign-in</button>
+      <button id="signInBtn">Sign in</button>
     </form>
   </section>
 
   <section class="hidden" id="sectionPasskey">
-    <span>Sign IN with passkeys</span>
-
+    <h3>Passkey sign in</h3>
     <form>
-      <input type="text" name="username" autocomplete="username webauthn" id="userNamePasskey">
-      <button id="signInBtnPasskey">sign-in with passkeys</button>
+      <input type="text" name="username" autocomplete="username webauthn" id="userNamePasskey" placeholder="username">
+      <button id="signInBtnPasskey">
+        <img src='./passkey-icon.svg' width="16" height="16" />
+        Sign in with a passkey
+      </button>
     </form>
   </section>
   <script src="https://unpkg.com/@simplewebauthn/browser/dist/bundle/index.umd.min.js"></script>
