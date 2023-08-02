@@ -170,7 +170,7 @@ router.post('/verification-signIn', async function(req, res, next){
   const user = (await userManager.getUserBy({"userName":body.userName})).toJSON();
   if(user){
     const expectedChallenge = body.challenge;
-    const authenticator = (await credentialManager.getUserAuthenticator(user.id, body.id)).toJSON();
+    const authenticator = (await credentialManager.getUserAuthenticator(user.id, body.id))?.toJSON();
     if (!authenticator) {
       throw new Error(`Could not find authenticator ${body.id} for user ${user.id}`);
     }
